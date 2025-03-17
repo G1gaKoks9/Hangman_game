@@ -1,0 +1,117 @@
+html, body {
+    height: 99%;
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-color: #283030;
+    color: #ccc;
+    font-family: "Love Ya Like A Sister";
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: 5px;
+}
+label {
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+#input-phrase {
+    height: 24px;
+    width: 200px;
+}
+#container {
+    display: flex;
+    height: 100vh;
+    gap: 5%;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 10%;
+    min-width: 80%;
+}
+#game {
+    display: none;
+    /* display: flex; to zmieni JS */
+    gap: 20px;
+    justify-content: space-between;
+}
+#phrase-box {
+    position: absolute;
+    top: 35%;
+    left: 0;
+    margin-top: 50px;
+    width: 100%;
+    min-height: 70px;
+    text-align: center;
+    font-size: 70px;
+}
+#gallow-box {
+    min-height: 400px;
+    flex-grow: 1;
+    text-align: center;
+    vertical-align: middle;
+}
+#gallow-img {
+    min-height: 400px;
+}
+#alphabet {
+    display: grid;
+    margin: 10% 0;
+    min-height: 300px;
+    min-width: 500px;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    text-align: center;
+}
+.letter-box {
+    border: 4px solid #aaa;
+    border-radius: 15px;
+    color: #aaa;
+    user-select: none;
+}
+#Q, #V, #X {
+    border-color: #aac;
+    color: #aac;
+}
+.letter-box:hover {
+    border-color: #fff;
+    background-color: #303838;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 700;
+}
+/* Klasa dla JavaScript */
+.letter-reset-hover.letter-box:hover {
+    border-color: inherit !important;
+    background-color: #283030;
+    color: #aaa;
+    cursor: default;
+    font-weight: 400;
+}
+/* Klasa dla JavaScript */
+.letter-reset-active.letter-box:active {
+    border-color: inherit !important;
+    color: #aaa;
+}
+.letter-box:active {
+    border-color: #888;
+    color: #888;
+}
+.letter {
+    display: block;
+    margin-top: 6px;
+    margin-left: 5px;
+    text-align: center;
+}
+#jednak-kurwa {
+    margin-bottom: 50px;
+}
+#final-message {
+    display: inline-block;
+    margin-left: 33.5%;
+    min-height: 86px;
+    text-align: center;
+    font-size: 70px;
+}
+#timer {
+    float: right;
+}

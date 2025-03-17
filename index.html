@@ -1,0 +1,108 @@
+<!-- Gra w wisielca -->
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>Gra w wisielca</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Gra w wisielca">
+    <meta name="keywords" content="wisielec, hasło, gra">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Piotr Skibiod">
+
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap" rel="stylesheet">
+    <!-- Icon -->
+    <link rel="icon" type="image/png" href="img/icon.png">
+
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+    <main>
+        <div id="container">
+
+            <article>
+                <div id="phrase-box">
+                    <span id="phrase">
+                        <label>Wpisz hasło do odgadnięcia: <input id="input-phrase" type="text"></label>
+                        <script>document.getElementById("input-phrase").focus();</script>
+                        <input id="submit-button" type="submit" onclick="startGame(); timerDisplay();" value="Zaczynamy grę!">
+                    </span>
+                </div>
+            </article>
+
+            <div id="game">
+                <article>
+                    <div id="gallow-box">
+                        <img id="gallow-img" src="img/s0.png" alt="szubienica0">
+                    </div>
+                </article>
+                
+                <article>
+                    <div id="alphabet">
+                        <div id="A" class="letter-box" onclick="checkLetter(id);"><span class="letter">A</span></div>
+                        <div id="Ą" class="letter-box" onclick="checkLetter(id);"><span class="letter">Ą</span></div>
+                        <div id="B" class="letter-box" onclick="checkLetter(id);"><span class="letter">B</span></div>
+                        <div id="C" class="letter-box" onclick="checkLetter(id);"><span class="letter">C</span></div>
+                        <div id="Ć" class="letter-box" onclick="checkLetter(id);"><span class="letter">Ć</span></div>
+                        <div id="D" class="letter-box" onclick="checkLetter(id);"><span class="letter">D</span></div>
+                        <div id="E" class="letter-box" onclick="checkLetter(id);"><span class="letter">E</span></div>
+                        <div id="Ę" class="letter-box" onclick="checkLetter(id);"><span class="letter">Ę</span></div>
+                        <div id="F" class="letter-box" onclick="checkLetter(id);"><span class="letter">F</span></div>
+                        <div id="G" class="letter-box" onclick="checkLetter(id);"><span class="letter">G</span></div>
+                        <div id="H" class="letter-box" onclick="checkLetter(id);"><span class="letter">H</span></div>
+                        <div id="I" class="letter-box" onclick="checkLetter(id);"><span class="letter">I</span></div>
+                        <div id="J" class="letter-box" onclick="checkLetter(id);"><span class="letter">J</span></div>
+                        <div id="K" class="letter-box" onclick="checkLetter(id);"><span class="letter">K</span></div>
+                        <div id="L" class="letter-box" onclick="checkLetter(id);"><span class="letter">L</span></div>
+                        <div id="Ł" class="letter-box" onclick="checkLetter(id);"><span class="letter">Ł</span></div>
+                        <div id="M" class="letter-box" onclick="checkLetter(id);"><span class="letter">M</span></div>
+                        <div id="N" class="letter-box" onclick="checkLetter(id);"><span class="letter">N</span></div>
+                        <div id="Ń" class="letter-box" onclick="checkLetter(id);"><span class="letter">Ń</span></div>
+                        <div id="O" class="letter-box" onclick="checkLetter(id);"><span class="letter">O</span></div>
+                        <div id="Ó" class="letter-box" onclick="checkLetter(id);"><span class="letter">Ó</span></div>
+                        <div id="P" class="letter-box" onclick="checkLetter(id);"><span class="letter">P</span></div>
+                        <div id="Q" class="letter-box" onclick="checkLetter(id);"><span class="letter">Q</span></div>
+                        <div id="R" class="letter-box" onclick="checkLetter(id);"><span class="letter">R</span></div>
+                        <div id="S" class="letter-box" onclick="checkLetter(id);"><span class="letter">S</span></div>
+                        <div id="Ś" class="letter-box" onclick="checkLetter(id);"><span class="letter">Ś</span></div>
+                        <div id="T" class="letter-box" onclick="checkLetter(id);"><span class="letter">T</span></div>
+                        <div id="U" class="letter-box" onclick="checkLetter(id);"><span class="letter">U</span></div>
+                        <div id="V" class="letter-box" onclick="checkLetter(id);"><span class="letter">V</span></div>
+                        <div id="W" class="letter-box" onclick="checkLetter(id);"><span class="letter">W</span></div>
+                        <div id="X" class="letter-box" onclick="checkLetter(id);"><span class="letter">X</span></div>
+                        <div id="Y" class="letter-box" onclick="checkLetter(id);"><span class="letter">Y</span></div>
+                        <div id="Z" class="letter-box" onclick="checkLetter(id);"><span class="letter">Z</span></div>
+                        <div id="Ź" class="letter-box" onclick="checkLetter(id);"><span class="letter">Ź</span></div>
+                        <div id="Ż" class="letter-box" onclick="checkLetter(id);"><span class="letter">Ż</span></div>
+                    </div>
+                </article>
+            </div>
+
+            <article id="jednak-kurwa">
+                <div id="final-message"></div>
+                <div id="timer"></div>
+            </article>
+
+        </div>
+    </main>
+
+    <script>
+        document.getElementById("input-phrase").addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                document.getElementById("submit-button").click();
+            }
+        });
+        document.addEventListener("keydown", function(event) {
+            if (/[a-z]/.test(event.key) && event.key.length == 1) {
+                checkLetter(event.key.toUpperCase());
+                console.log(event.key);
+            } else if (event.key == "Enter" && (gallowImg == 8 || phrase == encodedPhrase)) location.reload();
+        });
+    </script>
+</body>
+</html>
